@@ -609,7 +609,7 @@ GetImageMetadata(const char *path, const char *name)
 			imsrc = image_new_from_jpeg(NULL, 0, ed->data, ed->size, 1, ROTATE_NONE);
 			if( imsrc )
 			{
-				if( (imsrc->width <= 160) && (imsrc->height <= 160) )
+				if( (imsrc->width <= 500) && (imsrc->height <= 500) )
 					thumb = 1;
 				image_free(imsrc);
 			}
