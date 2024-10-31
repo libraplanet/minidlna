@@ -70,11 +70,11 @@ save_resized_album_art(image_s *imsrc, const char *path)
 	if( imsrc->width > imsrc->height )
 	{
 		dstw = 500;
-		dsth = (imsrc->height<<8) / ((imsrc->width<<8)/500);
+		dsth = (imsrc->height * 500) / imsrc->width;
 	}
 	else
 	{
-		dstw = (imsrc->width<<8) / ((imsrc->height<<8)/500);
+		dstw = (imsrc->width * 500) / imsrc->height;
 		dsth = 500;
 	}
 	imdst = image_resize(imsrc, dstw, dsth);
